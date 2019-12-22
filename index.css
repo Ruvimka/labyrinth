@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: cursive;
+  background: no-repeat url(./bg.jpg);
+  background-size: cover;
+}
+* {
+  outline: none;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+header {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  padding: 3rem 0;
+}
+header hr {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border: none;
+  background-color: black;
+  z-index: 1;
+}
+header .headerTextBlock {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  background-color: #7d062c;
+  max-width: 300px;
+  margin: auto;
+  border-radius: 1rem;
+}
+header .headerTextBlock h1 {
+  margin: 0;
+  display: inline;
+  color: #ffcd00;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+main .labyrinthBlockContainer {
+  display: grid;
+  grid-gap: 1rem;
+  margin: auto;
+  height: 500px;
+}
+main .labyrinthBlockContainer .labyrinthBlock {
+  background-color: blueviolet;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #ffcd00;
+  position: relative;
+}
+main .labyrinthBlockContainer .labyrinthBlock.true::after {
+  content: '';
+  display: block;
+  border: solid #00ff0a;
+  border-width: 0 0.6rem 0.6rem 0;
+  width: 15%;
+  height: 40%;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+  top: 21%;
+}
+main .labyrinthBlockContainer .labyrinthBlock.false::after,
+main .labyrinthBlockContainer .labyrinthBlock.false::before {
+  content: '';
+  display: block;
+  border: solid red;
+  border-width: 0 0.6rem 0.6rem 0;
+  width: 50%;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+  position: absolute;
+}
+main .labyrinthBlockContainer .labyrinthBlock.false::before {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+footer {
+  margin-top: 3rem;
+}
+footer .labyrinthMoveContainer {
+  display: grid;
+  grid-gap: 1rem;
+  margin: auto;
+  width: fit-content;
+}
+footer .labyrinthMoveBlock {
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .startBtn {
+  display: block;
+  margin: 2rem auto 0;
+}
+
+input {
+  display: block;
+  margin: 1rem auto;
+  background-color: #dd1738;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: white;
+  font-family: unset;
+}
+input::placeholder {
+  color: white;
+}
+
+.btn {
+  background-color: yellow;
+  border: unset;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: unset;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+i {
+  border: solid #ffab0d;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 0.5rem;
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  margin-left: 0.5rem;
+}
+
+.top {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  margin-top: 0.5rem;
+}
+
+.bottom {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  margin-bottom: 0.5rem;
+}

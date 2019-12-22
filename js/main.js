@@ -1,0 +1,1 @@
+new Game({ width: 4, height: 4 }, 10)
